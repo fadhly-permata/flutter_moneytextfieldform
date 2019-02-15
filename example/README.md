@@ -113,12 +113,14 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 | `formatStyle`                 | `TextStyle`                               | Used to change `TextStyle` in the formatted area. The default value is `null`. |
 | `controller`                  | `TextEditingController`                   | Used to capture values inputted by the user.
 
+
 > **Tips:**: No need to initialize the value in `controller.text`, because the value will be ignored. the `controller` property is only intended to capture the value inputted by the user.
 
 
 ### MoneyDisplayFormat
 
 `MoneyDisplayFormat` is an enum object with values such as the following:
+
 | Name                | Description |
 | ------------------  | ----------- |
 | longNoSymbol        | Used to display currency values in full format and without a currency symbol. |
