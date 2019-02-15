@@ -16,7 +16,9 @@ class MoneyTextFormFieldSettings {
     this.labelText = 'Amount',
     this.labelStyle,
     this.formatStyle,
-    this.inputStyle
+    this.inputStyle,
+
+    this.controller
   });
 
   TextEditingController controller;
