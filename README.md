@@ -80,11 +80,13 @@ TextEditingController mycontroller = TextEditingController();
 From the above code it will look more or less like the following:
 
 > ![MoneyTextFormField](doc/mtff-full-format.gif)
+>
 > Figure 1: Using full format
 
 
 
 > ![MoneyTextFormField](doc/mtff-compact-format.gif)
+>
 > Figure 2: Using compact format
 
 Referring to the example code above, to retrieve the value inputted by the user, you can get it through the `mycontroller.text` object as follows:
