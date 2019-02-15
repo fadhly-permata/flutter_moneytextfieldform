@@ -96,7 +96,7 @@ print(mycontroller.text)
 ```
 
 ## Configurations
-For now, `MoneyTextFormField` only uses one property to configure the display of that object, the `settings` property that has a data type is an instance of `MoneyTextFormFieldSettings'. Following are the properties owned by the `MoneyTextFormFieldSettings` instance:
+For now, `MoneyTextFormField` only uses one property to configure the display of that object, the `settings` property that has a data type is an instance of `MoneyTextFormFieldSettings`. Following are the properties owned by the `MoneyTextFormFieldSettings` instance:
 
 | Name                          | Data Type     | Description |
 | ----------------------------- | ------------- | ----------- |

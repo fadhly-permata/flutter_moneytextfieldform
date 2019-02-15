@@ -1,6 +1,10 @@
 
 # 0.0.*
 
+- ## 0.0.4
+    **FIX:**
+    - Fix invalid closing quote on documentations.
+
 - ## 0.0.3
     **FIX:**
     - Major fix for documentation error tags.
