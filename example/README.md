@@ -10,7 +10,7 @@
 
 
 #### Dependencies :
-[![intl](https://img.shields.io/pub/vpre/flutter_money_formatter.svg?label=FlutterMoneyFormatter&colorA=gray&colorB=green&style=plastic)](https://pub.dartlang.org/packages/intl)
+[![intl](https://img.shields.io/pub/vpre/flutter_money_formatter.svg?label=FlutterMoneyFormatter&colorA=gray&colorB=green&style=plastic)](https://pub.dartlang.org/packages/flutter_money_formatter)
 
 
 ---
