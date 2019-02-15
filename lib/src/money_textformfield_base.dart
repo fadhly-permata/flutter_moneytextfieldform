@@ -46,6 +46,7 @@ class _Utility {
   }
 }
 
+
 /// MoneyTextFormField instance
 class MoneyTextFormField extends StatefulWidget {
   /// Constructing instance of MoneyTextFormField
