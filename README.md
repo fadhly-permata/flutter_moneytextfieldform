@@ -17,7 +17,7 @@
 
 ## Install
 
-For complete steps in installing `FlutterMoneyFormatter` you can see in the [**Installation Guide**](https://pub.dartlang.org/packages/moneytextformfield).
+For complete steps in installing `MoneyTextFormField` you can see in the [**Installation Guide**](https://pub.dartlang.org/packages/moneytextformfield).
 
 
 ## Usage
@@ -42,7 +42,7 @@ TextEditingController mycontroller = TextEditingController();
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('MoneyTextFormField Test'),
+          title: Text('MoneyTextFormField Demo'),
         ),
         body: Column(
           children: <Widget>[
@@ -79,12 +79,12 @@ TextEditingController mycontroller = TextEditingController();
 
 From the above code it will look more or less like the following:
 
-> ![MoneyTextFormField](doc\mtff-full-format.gif)
+> ![MoneyTextFormField](doc/mtff-full-format.gif)
 > Figure 1: Using full format
 
 
 
-> ![MoneyTextFormField](doc\mtff-compact-format.gif)
+> ![MoneyTextFormField](doc/mtff-compact-format.gif)
 > Figure 2: Using compact format
 
 Referring to the example code above, to retrieve the value inputted by the user, you can get it through the `mycontroller.text` object as follows:
@@ -93,39 +93,38 @@ Referring to the example code above, to retrieve the value inputted by the user,
 print(mycontroller.text)
 ```
 
-
 ## Configurations
 For now, `MoneyTextFormField` only uses one property to configure the display of that object, the `settings` property that has a data type is an instance of `MoneyTextFormFieldSettings'. Following are the properties owned by the `MoneyTextFormFieldSettings` instance:
 
-Name                            | Data Type     | Description
-------------------------------- | ------------- | --------------------
-`amount`                        | `double`                                  | Used to provide the initial value to be used by the widget. The default value is `0.0`.
-`currencySymbol`                | `String`                                  | Used to replace the currency symbol that will be used. The default value is `'$'` (dollar sign).
-`decimalSeparator`              | `String`                                  | Used to replace the separator character in fractions. The default value is `'.'` (dot).
-`thousandSeparator`             | `String`                                  | Used to replace separating characters between thousands. The default value is `','` (comma).
-`fractionDigits`                | `int`                                     | Used to set the number of fractional values to be displayed. The default value is `2'.
-`spaceBetweenSymbolAndNumber`   | `bool`                                    | Used to ensure that currency symbols and values are separated by using space characters. The default value is `true`.
-`displayFormat`                 | [MoneyDisplayFormat](#MoneyDisplayFormat) | Used to set the type of format that will be displayed on the widget. The default value is `MoneyDisplayFormat.longLeftSymbol`. For more details, [see here](#MoneyDisplayFormat).
-`labelText`                     | `String`                                  | Use to replace the label that will be displayed on the widget. The default value is `'Amount'`.
-`labelStyle`                    | `TextStyle`                               | Used to change `TextStyle` for` labelText`. The default value is `null`.
-`inputStyle`                    | `TextStyle`                               | Used to change `TextStyle` in the input area. The default value is `null`.
-`formatStyle`                   | `TextStyle`                               | Used to change `TextStyle` in the formatted area. The default value is `null`.
-`controller`                    | `TextEditingController`                   | Used to capture values inputted by the user.
+| Name                          | Data Type     | Description |
+| ----------------------------- | ------------- | ----------- |
+| `amount`                      | `double`                                  | Used to provide the initial value to be used by the widget. The default value is `0.0`. |
+| `currencySymbol`              | `String`                                  | Used to replace the currency symbol that will be used. The default value is `'$'` (dollar sign). |
+| `decimalSeparator`            | `String`                                  | Used to replace the separator character in fractions. The default value is `'.'` (dot). |
+| `thousandSeparator`           | `String`                                  | Used to replace separating characters between thousands. The default value is `','` (comma). |
+| `fractionDigits`              | `int`                                     | Used to set the number of fractional values to be displayed. The default value is `2'. |
+| `spaceBetweenSymbolAndNumber` | `bool`                                    | Used to ensure that currency symbols and values are separated by using space characters. The default value is `true`. |
+| `displayFormat`               | [MoneyDisplayFormat](#MoneyDisplayFormat) | Used to set the type of format that will be displayed on the widget. The default value is `MoneyDisplayFormat.longLeftSymbol`. For more details, [see here](#MoneyDisplayFormat). |
+| `labelText`                   | `String`                                  | Use to replace the label that will be displayed on the widget. The default value is `'Amount'`. |
+| `labelStyle`                  | `TextStyle`                               | Used to change `TextStyle` for` labelText`. The default value is `null`. |
+| `inputStyle`                  | `TextStyle`                               | Used to change `TextStyle` in the input area. The default value is `null`. |
+| `formatStyle`                 | `TextStyle`                               | Used to change `TextStyle` in the formatted area. The default value is `null`. |
+| `controller`                  | `TextEditingController`                   | Used to capture values inputted by the user.
 
-> ** Caution: ** No need to initialize the value in `controller.text`, because the value will be ignored. the `controller` property is only intended to capture the value inputted by the user.
+> **Tips:**: No need to initialize the value in `controller.text`, because the value will be ignored. the `controller` property is only intended to capture the value inputted by the user.
 
 
 ### MoneyDisplayFormat
 
 `MoneyDisplayFormat` is an enum object with values such as the following:
-Name                | Description
-------------------  | --------------------
-longNoSymbol        | Used to display currency values in full format and without a currency symbol.
-longLeftSymbol      | Used to display currency values in full format with currency symbols on the left.
-longRightSymbol     | Used to display currency values in full format with currency symbols on the right.
-compactNoSymbol     | Used to display currency values in a short format and without a currency symbol.
-compactLeftSymbol   | Used to display currency values in a short format with a currency symbol on the left.
-compactRightSymbol  | Used to display currency values in a short format with a currency symbol on the right.
+| Name                | Description |
+| ------------------  | ----------- |
+| longNoSymbol        | Used to display currency values in full format and without a currency symbol. |
+| longLeftSymbol      | Used to display currency values in full format with currency symbols on the left. |
+| longRightSymbol     | Used to display currency values in full format with currency symbols on the right. |
+| compactNoSymbol     | Used to display currency values in a short format and without a currency symbol. |
+| compactLeftSymbol   | Used to display currency values in a short format with a currency symbol on the left. |
+| compactRightSymbol  | Used to display currency values in a short format with a currency symbol on the right. |
 
 ---
 
