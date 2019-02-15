@@ -1,6 +1,10 @@
 
 # 0.0.*
 
+- ## 0.0.3
+    **FIX:**
+    - Major fix for documentation error tags.
+
 - ## 0.0.2
 
     **ADD:**
