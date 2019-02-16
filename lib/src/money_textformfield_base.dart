@@ -3,8 +3,141 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
+
+import 'package:moneytextformfield/src/models/appearance_settings.dart';
+import 'package:moneytextformfield/src/models/money_format_settings.dart';
+import 'package:moneytextformfield/src/models/money_textformfield_settings.dart';
+
+
 import 'package:moneytextformfield/src/money_display_format.dart';
-import 'package:moneytextformfield/src/money_textformfield_settings.dart';
+
+/// Instance of [MoneyTextFormField] widget
+class MoneyTextFormField extends StatefulWidget {
+  /// Instance constructor
+  MoneyTextFormField({@required this.settings}) {
+    settings
+      ..controller = settings.controller ?? TextEditingController()
+      ..moneyFormatSettings = settings.moneyFormatSettings ?? MoneyFormatSettings()
+      ..moneyFormatSettings.amount = settings.moneyFormatSettings.amount ?? _Utility.zeroWithFractionDigits(fractionDigits: settings.moneyFormatSettings.fractionDigits)
+      ..appearanceSettings = settings.appearanceSettings ?? AppearanceSettings();
+  }
+
+  /// Configurations data for [MoneyTextFormField] parameter
+  final MoneyTextFormFieldSettings settings;
+
+
+  @override
+  _MoneyTextFormFieldState createState() => _MoneyTextFormFieldState();
+}
+
+
+class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
+  FlutterMoneyFormatter _fmf = new FlutterMoneyFormatter(amount: 0.0);
+  String _formattedAmount;
+
+
+  @override
+  initState() {
+    super.initState();
+
+    MoneyTextFormFieldSettings ws = widget.settings;
+    MoneyFormatSettings wsm = ws.moneyFormatSettings;
+
+    // fmf handler
+    _fmf = _fmf.copyWith(
+      amount: wsm.amount,
+      symbol: wsm.currencySymbol,
+      fractionDigits: wsm.fractionDigits,
+      thousandSeparator: wsm.thousandSeparator,
+      decimalSeparator: wsm.decimalSeparator,
+      spaceBetweenSymbolAndNumber: wsm.spaceBetweenSymbolAndNumber
+    );
+
+    _formattedAmount =_Utility.getFormattedAmount(wsm.displayFormat, _fmf);
+
+    // controller handler
+    if (ws.controller == null)
+      ws.controller = TextEditingController();
+
+    ws.controller.text = '${wsm.amount}';
+    ws.controller.addListener(_onChanged);
+
+
+    // inputFormatter handler
+    if (ws.inputFormatters == null)
+      ws.inputFormatters = List<TextInputFormatter>();
+
+    ws.inputFormatters.insert(0, WhitelistingTextInputFormatter(RegExp('[0-9.]')));
+  }
+
+
+  @override
+  dispose() {
+    super.dispose();
+
+    widget.settings.controller.dispose();
+  }
+
+
+  _onChanged() {
+    MoneyTextFormFieldSettings ws = widget.settings;
+    
+    _fmf.amount = _Utility.stringToDouble(
+      ws.controller.text, 
+      fractionDigits: ws.moneyFormatSettings.fractionDigits
+    );
+
+    _formattedAmount = _Utility.getFormattedAmount(ws.moneyFormatSettings.displayFormat, _fmf);
+
+    if (widget.settings.onChanged != null)
+      widget.settings.onChanged();
+    
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    MoneyTextFormFieldSettings ws = widget.settings;
+    AppearanceSettings wsa = ws.appearanceSettings;
+
+    return Padding(
+      padding: const EdgeInsets.all(30.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          TextFormField(
+            controller: ws.controller,
+            inputFormatters: ws.inputFormatters,
+            validator: ws.validator,
+            enabled: ws.enabled,
+            textAlign: TextAlign.right,
+            style: wsa.inputStyle,
+            keyboardType: TextInputType.numberWithOptions(
+              decimal: true,
+              signed: true
+            ),
+            decoration: InputDecoration(
+              icon: wsa.icon,
+              labelText: wsa.labelText,
+              hintText: wsa.hintText,
+
+              labelStyle: wsa.labelStyle,
+              errorStyle: wsa.errorStyle,
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: Text(
+              _formattedAmount,
+              textAlign: TextAlign.right,
+              style: wsa.formattedStyle,
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
 
 
 /// An utility instance
@@ -43,105 +176,5 @@ class _Utility {
       case MoneyDisplayFormat.longRightSymbol: return fmf.formattedRightSymbol; break;
       default: return fmf.formattedNonSymbol; break;
     }
-  }
-}
-
-
-/// MoneyTextFormField instance
-class MoneyTextFormField extends StatefulWidget {
-  /// Constructing instance of MoneyTextFormField
-  MoneyTextFormField({@required this.settings}) {
-    // make sure there are no null value
-    settings
-      ..amount = settings.amount ?? _Utility.zeroWithFractionDigits(fractionDigits: settings.fractionDigits)
-      ..formattedAmount = '${_Utility.zeroWithFractionDigits(fractionDigits: settings.fractionDigits)}'
-      ..controller = settings.controller ?? TextEditingController();
-  }
-
-
-  /// configuration for MoneyTextFormField
-  final MoneyTextFormFieldSettings settings;
-
-
-  @override
-  _MoneyTextFormFieldState createState() => _MoneyTextFormFieldState(settings: this.settings);
-}
-
-
-class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
-  _MoneyTextFormFieldState({ @required this.settings }) {
-    fmf = FlutterMoneyFormatter(amount: settings.amount)
-      ..symbol = settings.currencySymbol
-      ..fractionDigits = settings.fractionDigits
-      ..thousandSeparator = settings.thousandSeparator
-      ..decimalSeparator = settings.decimalSeparator
-      ..spaceBetweenSymbolAndNumber = settings.spaceBetweenSymbolAndNumber;
-  }
-
-
-  MoneyTextFormFieldSettings settings;
-  FlutterMoneyFormatter fmf;
-
-
-  @override
-  void initState() {
-    super.initState();
-
-    fmf = fmf.copyWith(amount: settings.amount);
-    settings.controller.text = '${settings.amount}';
-
-    settings.controller.addListener(_onChanged);
-  }
-
-
-  @override
-  void dispose() {
-    super.dispose();
-
-    settings.controller.dispose();
-  }
-
-
-  _onChanged() {
-    fmf = fmf.copyWith(amount: _Utility.stringToDouble(settings.controller.text, fractionDigits: settings.fractionDigits));
-    settings.formattedAmount = _Utility.getFormattedAmount(settings.displayFormat, fmf);
-    setState(() {});
-  }
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          TextFormField(
-            controller: settings.controller,
-            decoration: InputDecoration(
-              labelText: settings.labelText,
-              labelStyle: settings.labelStyle 
-            ),
-            keyboardType: TextInputType.numberWithOptions(
-              decimal: true,
-              signed: true
-            ),
-            inputFormatters: [
-              WhitelistingTextInputFormatter(RegExp('[0-9.]'))
-            ],
-            textAlign: TextAlign.right,
-            style: settings.inputStyle,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Text(
-              settings.formattedAmount,
-              textAlign: TextAlign.right,
-              style: settings.formatStyle
-            ),
-          )
-        ],
-      ),
-    );
   }
 }

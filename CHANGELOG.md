@@ -1,3 +1,23 @@
+# 0.1.*
+
+- ## 0.1.0
+    **CHANGES:**
+    - From now on, properties in the `MoneyTextFormFieldSettings` instance will be segmented based on their respective criteria.
+    - Provides default values for all configuration instances.
+    - Remove the mandatory properties of each parameter contained in the `MoneyTextFormFieldSettings` instance, so that it can be initialized without any parameters.
+    - Separating files for each instance.
+    - Update documentation to match any changes that occur in the package.
+
+    **ADD:**
+    - `icon` feature.
+    - `hintText` feature.
+    - `errorStyle` feature.
+    - `validator` feature.
+    - `inputFormatters` feature.
+    - `onChanged` feature.
+    - `enabled` feature.
+
+---
 
 # 0.0.*
 

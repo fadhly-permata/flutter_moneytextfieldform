@@ -1,6 +1,6 @@
 name: moneytextformfield
 description: MoneyTextFormField is one of the flutter widget packages that can be used to input values in the form of currencies, by displaying the output format in realtime.
-version: 0.0.4
+version: 0.1.0
 author: Fadhly Permata <fadhly.permata@gmail.com>
 homepage: https://github.com/fadhly-permata/flutter_moneytextfieldform
 
