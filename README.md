@@ -116,7 +116,7 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 >>
 >> The value contained in `controller.text` is exactly the same as the one inputted by the user and has a `String` data type. If you want to get results in the same format, you can use the `FlutterMoneyFormatter` package which is also used by` MoneyTextFormField`.
 >>
->>> [See detailed information about `FlutterMoneyFormatter`.]((https://pub.dartlang.org/packages/flutter_money_formatter))
+>>> [See detailed information about **FlutterMoneyFormatter**.]((https://pub.dartlang.org/packages/flutter_money_formatter))
 
 
 ### AppearanceSettings
