@@ -1,4 +1,5 @@
-import 'package:moneytextformfield/src/money_display_format.dart';
+import 'package:moneytextformfield/src/models/money_display_format.dart';
+
 
 class MoneyFormatSettings {
   MoneyFormatSettings({
@@ -11,6 +12,7 @@ class MoneyFormatSettings {
     this.displayFormat = MoneyDisplayFormat.longLeftSymbol
   });
 
+
   double amount;
   int fractionDigits;
   String currencySymbol;
@@ -18,6 +20,7 @@ class MoneyFormatSettings {
   String decimalSeparator;
   bool spaceBetweenSymbolAndNumber;
   MoneyDisplayFormat displayFormat;
+
 
   MoneyFormatSettings copyWith({
     double amount,

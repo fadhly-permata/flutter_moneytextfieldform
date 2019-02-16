@@ -4,12 +4,10 @@ import 'package:flutter/services.dart';
 
 import 'package:flutter_money_formatter/flutter_money_formatter.dart';
 
+import 'package:moneytextformfield/src/models/money_display_format.dart';
 import 'package:moneytextformfield/src/models/appearance_settings.dart';
 import 'package:moneytextformfield/src/models/money_format_settings.dart';
 import 'package:moneytextformfield/src/models/money_textformfield_settings.dart';
-
-
-import 'package:moneytextformfield/src/money_display_format.dart';
 
 /// Instance of [MoneyTextFormField] widget
 class MoneyTextFormField extends StatefulWidget {
@@ -21,6 +19,7 @@ class MoneyTextFormField extends StatefulWidget {
       ..moneyFormatSettings.amount = settings.moneyFormatSettings.amount ?? _Utility.zeroWithFractionDigits(fractionDigits: settings.moneyFormatSettings.fractionDigits)
       ..appearanceSettings = settings.appearanceSettings ?? AppearanceSettings();
   }
+
 
   /// Configurations data for [MoneyTextFormField] parameter
   final MoneyTextFormFieldSettings settings;
@@ -94,6 +93,7 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
     
     setState(() {});
   }
+
 
   @override
   Widget build(BuildContext context) {
