@@ -17,7 +17,7 @@
 
 ## Install
 
-For complete steps in installing `MoneyTextFormField` you can see in the [**Installation Guide**](https://pub.dartlang.org/packages/moneytextformfield).
+For complete steps in installing `MoneyTextFormField` you can see in the [**Installation Guide**](https://pub.dartlang.org/packages/moneytextformfield#-installing-tab-).
 
 
 ## Usage
@@ -25,28 +25,36 @@ For complete steps in installing `MoneyTextFormField` you can see in the [**Inst
 The following is the simplest example of using `MoneyTextFormField`:
 
 ```dart
+import 'package:moneytextformfield/moneytextformfield.dart';
+
+  /// ... some lines of code ...
+  MoneyTextFormField(
+    settings: MoneyTextFormFieldSettings()
+  )
+  /// ... some lines of code ...
+```
+
+For those who do not understand in implementing the code above, you can see the code below to create an application that can be directly used.
+
+
+```dart
 import 'package:flutter/material.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
 
-
 void main() => runApp(MyApp());
-
 
 class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
 
-
 class _MyAppState extends State<MyApp> {
   TextEditingController mycontroller = TextEditingController();
-
 
   @override
   void initState() {  
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -114,7 +122,7 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 
 >> **Notes:**
 >>
->> The value contained in `controller.text` is exactly the same as the one inputted by the user and has a `String` data type. If you want to get results in the same format, you can use the `FlutterMoneyFormatter` package which is also used by` MoneyTextFormField`.
+>> The value contained in `controller.text` is exactly the same as the one inputted by the user and has a `String` data type. If you want to get results in the same format, you can use the `FlutterMoneyFormatter` package which is also used by `MoneyTextFormField`.
 >>
 >>> [See detailed information about `FlutterMoneyFormatter`.](https://pub.dartlang.org/packages/flutter_money_formatter)
 
@@ -139,9 +147,9 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 | `fractionDigits`              | `int`                 | The fraction digits that will be used on formatted output. Default value is `2`. |
 | `currencySymbol`              | `String`              | The symbol that will be used on formatted output. Default value is `'$'` (dollar sign). |
 | `thousandSeparator`           | `String`              | The character that will be used as thousand separator on formatted output. Default value is `','` (comma).  |
-| `decimalSeparator`            | `String`              | asdsadThe character that will be used as decimal separator on formatted output. Default value is `'.'` (dot). |
+| `decimalSeparator`            | `String`              | The character that will be used as decimal separator on formatted output. Default value is `'.'` (dot). |
 | `spaceBetweenSymbolAndNumber` | `bool`                | If the value is [true] then formatted output will shown space between the number and the currency symbol. Default value is `true`. |
-| `displayFormat`               | `MoneyDisplayFormat`  | [See here](MoneyDisplayFormat) |
+| `displayFormat`               | `MoneyDisplayFormat`  | [See here](#MoneyDisplayFormat) |
 
 
 ### MoneyDisplayFormat
