@@ -1,5 +1,10 @@
 # 0.1.*
 
+- ## 0.1.1
+    **FIX:**
+    - `.gitignore` file
+
+
 - ## 0.1.0
     **CHANGES:**
     - From now on, properties in the `MoneyTextFormFieldSettings` instance will be segmented based on their respective criteria.
