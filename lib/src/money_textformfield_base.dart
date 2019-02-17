@@ -14,7 +14,7 @@ class MoneyTextFormField extends StatefulWidget {
   /// Instance constructor
   MoneyTextFormField({@required this.settings}) {
     settings
-      ..controller = settings.controller ?? TextEditingController()
+      // ..controller = settings.controller ?? TextEditingController()
       ..moneyFormatSettings = settings.moneyFormatSettings ?? MoneyFormatSettings()
       ..moneyFormatSettings.amount = settings.moneyFormatSettings.amount ?? _Utility.zeroWithFractionDigits(fractionDigits: settings.moneyFormatSettings.fractionDigits)
       ..appearanceSettings = settings.appearanceSettings ?? AppearanceSettings();
@@ -33,6 +33,7 @@ class MoneyTextFormField extends StatefulWidget {
 class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
   FlutterMoneyFormatter _fmf = new FlutterMoneyFormatter(amount: 0.0);
   String _formattedAmount;
+  bool _useInternalController = false;
 
 
   @override
@@ -55,8 +56,10 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
     _formattedAmount =_Utility.getFormattedAmount(wsm.displayFormat, _fmf);
 
     // controller handler
-    if (ws.controller == null)
+    if (ws.controller == null) {
       ws.controller = TextEditingController();
+      _useInternalController = true;
+    }
 
     ws.controller.text = '${wsm.amount}';
     ws.controller.addListener(_onChanged);
@@ -74,7 +77,8 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
   dispose() {
     super.dispose();
 
-    widget.settings.controller.dispose();
+    if (_useInternalController)
+      widget.settings.controller.dispose();
   }
 
 

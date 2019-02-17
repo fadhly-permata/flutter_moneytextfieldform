@@ -1,4 +1,8 @@
 # 0.1.*
+- ## 0.1.2
+    **FIX:**
+    - Not disposing controller when user assign it.
+
 
 - ## 0.1.1
     **FIX:**
