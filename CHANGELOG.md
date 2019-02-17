@@ -1,4 +1,16 @@
+# 0.2.*
+
+- ## 0.2.0
+    **ADD:**
+    - Disabled whitespace on input text.
+
+    **CHANGES:**
+    - Initial values on input text taken from `FlutterMoneyFormatter.formattedNonSymbol`
+
+---
+
 # 0.1.*
+
 - ## 0.1.2
     **FIX:**
     - Not disposing controller when user assign it.

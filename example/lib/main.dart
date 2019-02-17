@@ -12,7 +12,8 @@ class MyApp extends StatefulWidget {
 
 
 class _MyAppState extends State<MyApp> {
-  TextEditingController controller = TextEditingController();
+  TextEditingController longCtrl = TextEditingController();
+  TextEditingController compactCtrl = TextEditingController();
 
 
   @override
@@ -31,7 +32,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('MoneyTextFormField Demo'),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () => print(controller.text),
+          onPressed: () => print(longCtrl.text),
           child: Icon(Icons.save),
         ),
         body: SingleChildScrollView(
@@ -41,16 +42,40 @@ class _MyAppState extends State<MyApp> {
               children: <Widget>[
                 MoneyTextFormField(
                   settings: MoneyTextFormFieldSettings(
-                    controller: controller,
+                    controller: longCtrl,
+                    moneyFormatSettings: MoneyFormatSettings(
+                      currencySymbol: 'IDR',
+                      displayFormat: MoneyDisplayFormat.longRightSymbol
+                    ),
                     appearanceSettings: AppearanceSettings(
-                      labelText: 'Custom Label',
+                      labelText: 'Long Format Demo',
                       hintText: 'Custom Placeholder',
                       labelStyle: _ts,
                       inputStyle: _ts.copyWith(color: Colors.orange),
                       formattedStyle: _ts.copyWith(color: Colors.blue)
                     )
                   ),
+                ),
+                MoneyTextFormField(
+                  settings: MoneyTextFormFieldSettings(
+                    controller: compactCtrl,
+                    moneyFormatSettings: MoneyFormatSettings(
+                      displayFormat: MoneyDisplayFormat.compactLeftSymbol
+                    ),
+                    appearanceSettings: AppearanceSettings(
+                      labelText: 'Short Format Demo',
+                      hintText: 'Custom Placeholder',
+                      labelStyle: _ts,
+                      inputStyle: _ts.copyWith(color: Colors.orange),
+                      formattedStyle: _ts.copyWith(color: Colors.blue)
+                    )
+                  ),
+                ),
+                Divider(
+                  color: Colors.black87,
+                  height: 24.0,
                 )
+
               ],
             )
           ),

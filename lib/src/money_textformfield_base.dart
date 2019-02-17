@@ -61,7 +61,7 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
       _useInternalController = true;
     }
 
-    ws.controller.text = '${wsm.amount}';
+    ws.controller.text = '${_fmf.formattedNonSymbol}';
     ws.controller.addListener(_onChanged);
 
 
@@ -69,7 +69,10 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
     if (ws.inputFormatters == null)
       ws.inputFormatters = List<TextInputFormatter>();
 
-    ws.inputFormatters.insert(0, WhitelistingTextInputFormatter(RegExp('[0-9.]')));
+    ws.inputFormatters.insertAll(0, <TextInputFormatter>[
+      WhitelistingTextInputFormatter(RegExp('[0-9.]')),
+      BlacklistingTextInputFormatter(RegExp('\s'))
+    ]);
   }
 
 
