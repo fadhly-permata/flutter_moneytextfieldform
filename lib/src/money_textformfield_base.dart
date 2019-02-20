@@ -50,7 +50,7 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
       fractionDigits: wsm.fractionDigits,
       thousandSeparator: wsm.thousandSeparator,
       decimalSeparator: wsm.decimalSeparator,
-      spaceBetweenSymbolAndNumber: wsm.spaceBetweenSymbolAndNumber
+      symbolAndNumberSeparator: wsm.symbolAndNumberSeparator
     );
 
     _formattedAmount =_Utility.getFormattedAmount(wsm.displayFormat, _fmf);
@@ -61,7 +61,7 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
       _useInternalController = true;
     }
 
-    ws.controller.text = '${_fmf.formattedNonSymbol}';
+    ws.controller.text = '${_fmf.amount}';
     ws.controller.addListener(_onChanged);
 
 

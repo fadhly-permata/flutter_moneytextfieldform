@@ -1,5 +1,11 @@
 # 0.2.*
 
+- ## 0.2.1
+    **CHANGES:**
+    - Upgrading `FlutterMoneyFormatter`
+    - method adjustment
+    - documentation adjustment
+
 - ## 0.2.0
     **ADD:**
     - Disabled whitespace on input text.

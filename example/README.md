@@ -148,7 +148,7 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 | `currencySymbol`              | `String`              | The symbol that will be used on formatted output. Default value is `'$'` (dollar sign). |
 | `thousandSeparator`           | `String`              | The character that will be used as thousand separator on formatted output. Default value is `','` (comma).  |
 | `decimalSeparator`            | `String`              | The character that will be used as decimal separator on formatted output. Default value is `'.'` (dot). |
-| `spaceBetweenSymbolAndNumber` | `bool`                | If the value is [true] then formatted output will shown space between the number and the currency symbol. Default value is `true`. |
+| `symbolAndNumberSeparator`    | `String`              | The character that will be used as separator between symbol and number. Default value is `' '` (space). |
 | `displayFormat`               | `MoneyDisplayFormat`  | [See here](#MoneyDisplayFormat) |
 
 

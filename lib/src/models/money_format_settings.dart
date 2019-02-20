@@ -8,7 +8,7 @@ class MoneyFormatSettings {
     this.currencySymbol = '\$',
     this.thousandSeparator = ',',
     this.decimalSeparator = '.',
-    this.spaceBetweenSymbolAndNumber = true,
+    this.symbolAndNumberSeparator = ' ',
     this.displayFormat = MoneyDisplayFormat.longLeftSymbol
   });
 
@@ -18,7 +18,7 @@ class MoneyFormatSettings {
   String currencySymbol;
   String thousandSeparator;
   String decimalSeparator;
-  bool spaceBetweenSymbolAndNumber;
+  String symbolAndNumberSeparator;
   MoneyDisplayFormat displayFormat;
 
 
@@ -28,7 +28,7 @@ class MoneyFormatSettings {
     String currencySymbol,
     String thousandSeparator,
     String decimalSeparator,
-    bool spaceBetweenSymbolAndNumber,
+    String symbolAndNumberSeparator,
     MoneyDisplayFormat displayFormat
   })
     => 
@@ -38,6 +38,6 @@ class MoneyFormatSettings {
         ..currencySymbol = currencySymbol ?? this.currencySymbol
         ..thousandSeparator = thousandSeparator ?? this.thousandSeparator
         ..decimalSeparator = decimalSeparator ?? this.decimalSeparator
-        ..spaceBetweenSymbolAndNumber = spaceBetweenSymbolAndNumber ?? this.spaceBetweenSymbolAndNumber
+        ..symbolAndNumberSeparator = symbolAndNumberSeparator ?? this.symbolAndNumberSeparator
         ..displayFormat = displayFormat ?? this.displayFormat;
 }
