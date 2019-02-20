@@ -6,16 +6,14 @@ import 'package:moneytextformfield/src/models/money_format_settings.dart';
 import 'package:moneytextformfield/src/models/appearance_settings.dart';
 
 class MoneyTextFormFieldSettings {
-  MoneyTextFormFieldSettings({
-    this.controller,
-    this.validator,
-    this.inputFormatters,
-    this.onChanged,
-    this.moneyFormatSettings,
-    this.appearanceSettings,
-
-    this.enabled = true
-  });
+  MoneyTextFormFieldSettings(
+      {this.controller,
+      this.validator,
+      this.inputFormatters,
+      this.onChanged,
+      this.moneyFormatSettings,
+      this.appearanceSettings,
+      this.enabled = true});
 
   TextEditingController controller;
   FormFieldValidator<String> validator;
@@ -26,16 +24,14 @@ class MoneyTextFormFieldSettings {
 
   bool enabled;
 
-  MoneyTextFormFieldSettings copyWith({
-    TextEditingController controller,
-    FormFieldValidator<String> validator,
-    List<TextInputFormatter> inputFormatters,
-    VoidCallback onChanged,
-    MoneyFormatSettings moneyFormatSettings,
-    AppearanceSettings appearanceSettings,
-    bool enabled
-  })
-    =>
+  MoneyTextFormFieldSettings copyWith(
+          {TextEditingController controller,
+          FormFieldValidator<String> validator,
+          List<TextInputFormatter> inputFormatters,
+          VoidCallback onChanged,
+          MoneyFormatSettings moneyFormatSettings,
+          AppearanceSettings appearanceSettings,
+          bool enabled}) =>
       MoneyTextFormFieldSettings()
         ..controller = controller ?? this.controller
         ..validator = validator ?? this.validator

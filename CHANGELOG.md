@@ -1,5 +1,9 @@
 # 0.2.*
 
+- ## 0.2.2
+    **FIX:**
+    - Formatting source code as suggested on https://pub.dartlang.org
+
 - ## 0.2.1
     **CHANGES:**
     - Upgrading `FlutterMoneyFormatter`

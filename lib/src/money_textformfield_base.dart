@@ -15,26 +15,26 @@ class MoneyTextFormField extends StatefulWidget {
   MoneyTextFormField({@required this.settings}) {
     settings
       // ..controller = settings.controller ?? TextEditingController()
-      ..moneyFormatSettings = settings.moneyFormatSettings ?? MoneyFormatSettings()
-      ..moneyFormatSettings.amount = settings.moneyFormatSettings.amount ?? _Utility.zeroWithFractionDigits(fractionDigits: settings.moneyFormatSettings.fractionDigits)
-      ..appearanceSettings = settings.appearanceSettings ?? AppearanceSettings();
+      ..moneyFormatSettings =
+          settings.moneyFormatSettings ?? MoneyFormatSettings()
+      ..moneyFormatSettings.amount = settings.moneyFormatSettings.amount ??
+          _Utility.zeroWithFractionDigits(
+              fractionDigits: settings.moneyFormatSettings.fractionDigits)
+      ..appearanceSettings =
+          settings.appearanceSettings ?? AppearanceSettings();
   }
-
 
   /// Configurations data for [MoneyTextFormField] parameter
   final MoneyTextFormFieldSettings settings;
-
 
   @override
   _MoneyTextFormFieldState createState() => _MoneyTextFormFieldState();
 }
 
-
 class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
   FlutterMoneyFormatter _fmf = new FlutterMoneyFormatter(amount: 0.0);
   String _formattedAmount;
   bool _useInternalController = false;
-
 
   @override
   initState() {
@@ -45,15 +45,14 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
 
     // fmf handler
     _fmf = _fmf.copyWith(
-      amount: wsm.amount,
-      symbol: wsm.currencySymbol,
-      fractionDigits: wsm.fractionDigits,
-      thousandSeparator: wsm.thousandSeparator,
-      decimalSeparator: wsm.decimalSeparator,
-      symbolAndNumberSeparator: wsm.symbolAndNumberSeparator
-    );
+        amount: wsm.amount,
+        symbol: wsm.currencySymbol,
+        fractionDigits: wsm.fractionDigits,
+        thousandSeparator: wsm.thousandSeparator,
+        decimalSeparator: wsm.decimalSeparator,
+        symbolAndNumberSeparator: wsm.symbolAndNumberSeparator);
 
-    _formattedAmount =_Utility.getFormattedAmount(wsm.displayFormat, _fmf);
+    _formattedAmount = _Utility.getFormattedAmount(wsm.displayFormat, _fmf);
 
     // controller handler
     if (ws.controller == null) {
@@ -63,7 +62,6 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
 
     ws.controller.text = '${_fmf.amount}';
     ws.controller.addListener(_onChanged);
-
 
     // inputFormatter handler
     if (ws.inputFormatters == null)
@@ -75,32 +73,26 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
     ]);
   }
 
-
   @override
   dispose() {
     super.dispose();
 
-    if (_useInternalController)
-      widget.settings.controller.dispose();
+    if (_useInternalController) widget.settings.controller.dispose();
   }
-
 
   _onChanged() {
     MoneyTextFormFieldSettings ws = widget.settings;
-    
-    _fmf.amount = _Utility.stringToDouble(
-      ws.controller.text, 
-      fractionDigits: ws.moneyFormatSettings.fractionDigits
-    );
 
-    _formattedAmount = _Utility.getFormattedAmount(ws.moneyFormatSettings.displayFormat, _fmf);
+    _fmf.amount = _Utility.stringToDouble(ws.controller.text,
+        fractionDigits: ws.moneyFormatSettings.fractionDigits);
 
-    if (widget.settings.onChanged != null)
-      widget.settings.onChanged();
-    
+    _formattedAmount =
+        _Utility.getFormattedAmount(ws.moneyFormatSettings.displayFormat, _fmf);
+
+    if (widget.settings.onChanged != null) widget.settings.onChanged();
+
     setState(() {});
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -119,15 +111,12 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
             enabled: ws.enabled,
             textAlign: TextAlign.right,
             style: wsa.inputStyle,
-            keyboardType: TextInputType.numberWithOptions(
-              decimal: true,
-              signed: true
-            ),
+            keyboardType:
+                TextInputType.numberWithOptions(decimal: true, signed: true),
             decoration: InputDecoration(
               icon: wsa.icon,
               labelText: wsa.labelText,
               hintText: wsa.hintText,
-
               labelStyle: wsa.labelStyle,
               errorStyle: wsa.errorStyle,
             ),
@@ -146,14 +135,12 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
   }
 }
 
-
 /// An utility instance
 class _Utility {
   /// return Zero with spesific fraction digits length
   static double zeroWithFractionDigits({int fractionDigits = 2}) {
     return double.parse(0.toStringAsFixed(fractionDigits));
   }
-
 
   /// Convert string to double with spesific fraction digits length
   static double stringToDouble(String value, {int fractionDigits = 2}) {
@@ -164,7 +151,6 @@ class _Utility {
 
     try {
       result = double.parse(value);
-
     } catch (e) {
       result = zeroWithFractionDigits(fractionDigits: fractionDigits);
     }
@@ -172,16 +158,28 @@ class _Utility {
     return result;
   }
 
-
   /// Return formatted type based on [displayFormat]
-  static String getFormattedAmount(MoneyDisplayFormat displayFormat, FlutterMoneyFormatter fmf) {
+  static String getFormattedAmount(
+      MoneyDisplayFormat displayFormat, FlutterMoneyFormatter fmf) {
     switch (displayFormat) {
-      case MoneyDisplayFormat.compactLeftSymbol: return fmf.compactLeftSymbol; break;
-      case MoneyDisplayFormat.compactRightSymbol: return fmf.compactRightSymbol; break;
-      case MoneyDisplayFormat.compactNoSymbol: return fmf.compactNonSymbol; break;
-      case MoneyDisplayFormat.longLeftSymbol: return fmf.formattedLeftSymbol; break;
-      case MoneyDisplayFormat.longRightSymbol: return fmf.formattedRightSymbol; break;
-      default: return fmf.formattedNonSymbol; break;
+      case MoneyDisplayFormat.compactLeftSymbol:
+        return fmf.compactLeftSymbol;
+        break;
+      case MoneyDisplayFormat.compactRightSymbol:
+        return fmf.compactRightSymbol;
+        break;
+      case MoneyDisplayFormat.compactNoSymbol:
+        return fmf.compactNonSymbol;
+        break;
+      case MoneyDisplayFormat.longLeftSymbol:
+        return fmf.formattedLeftSymbol;
+        break;
+      case MoneyDisplayFormat.longRightSymbol:
+        return fmf.formattedRightSymbol;
+        break;
+      default:
+        return fmf.formattedNonSymbol;
+        break;
     }
   }
 }
