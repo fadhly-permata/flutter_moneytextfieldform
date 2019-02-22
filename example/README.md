@@ -129,15 +129,16 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 
 ### AppearanceSettings
 
-| Name                          | Data Type     | Description |
-| ----------------------------- | ------------- | ----------- |
-| `labelText`                   | `String`      | Text that describes the input field. Default value is `'Amount'` |
-| `hintText`                    | `String`      | Text that suggests what sort of input the field accepts. |
-| `icon`                        | `Widget`      | An icon to show before the input field and outside of the decoration's container. |
-| `labelStyle`                  | `TextStyle`   | The style to use for the `labelText` when the label is above (i.e., vertically adjacent to) the input field. |
-| `inputStyle`                  | `TextStyle`   | The style to use for the input field. |
-| `formattedStyle`              | `TextStyle`   | The style to use for the formatted output text. |
-| `errorStyle`                  | `TextStyle`   | The style to use for the `errorText` |
+| Name                          | Data Type           | Description |
+| ----------------------------- | ------------------- | ----------- |
+| `labelText`                   | `String`            | Text that describes the input field. Default value is `'Amount'` |
+| `hintText`                    | `String`            | Text that suggests what sort of input the field accepts. |
+| `icon`                        | `Widget`            | An icon to show before the input field and outside of the decoration's container. |
+| `labelStyle`                  | `TextStyle`         | The style to use for the `labelText` when the label is above (i.e., vertically adjacent to) the input field. |
+| `inputStyle`                  | `TextStyle`         | The style to use for the input field. |
+| `formattedStyle`              | `TextStyle`         | The style to use for the formatted output text. |
+| `errorStyle`                  | `TextStyle`         | The style to use for the `errorText` |
+| `padding`                     | `EdgeInsetGeometry` | The amount of space by which to inset the widget |
 
 
 ### MoneyFormatSettings

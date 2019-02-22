@@ -1,3 +1,15 @@
+# 0.3.*
+
+- ## 0.3.0
+    **ADD:**
+    - Padding capability
+    - License on each file.
+
+    **CHANGES:**
+    - License changed into BSD
+
+---
+
 # 0.2.*
 
 - ## 0.2.3
