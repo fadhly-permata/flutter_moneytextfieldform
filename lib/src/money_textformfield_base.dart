@@ -68,7 +68,7 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
       ws.inputFormatters = List<TextInputFormatter>();
 
     ws.inputFormatters.insertAll(0, <TextInputFormatter>[
-      WhitelistingTextInputFormatter(RegExp('[0-9.]')),
+      WhitelistingTextInputFormatter(RegExp('[\-0-9.]')),
       BlacklistingTextInputFormatter(RegExp('\s'))
     ]);
   }

@@ -27,8 +27,11 @@ class _MyAppState extends State<MyApp> {
             title: const Text('MoneyTextFormField Demo'),
           ),
           floatingActionButton: FloatingActionButton(
-            onPressed: () => print(longCtrl.text),
             child: Icon(Icons.save),
+            onPressed: () {
+              print(longCtrl.text);
+              print(compactCtrl.text);
+            },
           ),
           body: SingleChildScrollView(
             child: ConstrainedBox(

@@ -1,5 +1,10 @@
 # 0.2.*
 
+- ## 0.2.3
+    **ADD:**
+    - Support negative value
+
+
 - ## 0.2.2
     **FIX:**
     - Formatting source code as suggested on https://pub.dartlang.org
