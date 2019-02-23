@@ -1,9 +1,19 @@
 # 0.3.*
 
+- ## 0.3.1
+    **UPDATE:**
+    - Update `FlutterMoneyFormatter` dependecies
+    - Update license on each files.
+    
+
+    **FIX:**
+    - Formatting source code as suggested on https://pub.dartlang.org
+
+
 - ## 0.3.0
     **ADD:**
     - Padding capability
-    - License on each file.
+    - License on each files.
 
     **CHANGES:**
     - License changed into BSD

@@ -1,15 +1,15 @@
 /// Copyright (c) 2019, Fadhly Permata <fadhly.permata@gmail.com>
 /// All rights reserved.
-/// 
+///
 /// Redistribution and use in source and binary forms, with or without
 /// modification, are permitted provided that the following conditions are met:
-/// 
+///
 /// 1. Redistributions of source code must retain the above copyright notice, this
 ///    list of conditions and the following disclaimer.
 /// 2. Redistributions in binary form must reproduce the above copyright notice,
 ///    this list of conditions and the following disclaimer in the documentation
 ///    and/or other materials provided with the distribution.
-/// 
+///
 /// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 /// ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 /// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -20,10 +20,18 @@
 /// ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 /// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 /// SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-/// 
+///
 /// The views and conclusions contained in the software and documentation are those
 /// of the authors and should not be interpreted as representing official policies,
 /// either expressed or implied, of the MoneyTextFormField project.
+///
+///
+/// =================================================================================
+/// author  : Fadhly Permata
+/// email   : fadhly.permata@gmail.com
+/// github  : https://github.com/fadhly-permata/flutter_moneytextfieldform
+/// pub     : https://pub.dartlang.org/packages/moneytextformfield
+/// =================================================================================
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +49,6 @@ class MoneyTextFormField extends StatefulWidget {
   /// Instance constructor
   MoneyTextFormField({@required this.settings}) {
     settings
-      // ..controller = settings.controller ?? TextEditingController()
       ..moneyFormatSettings =
           settings.moneyFormatSettings ?? MoneyFormatSettings()
       ..moneyFormatSettings.amount = settings.moneyFormatSettings.amount ??
@@ -188,24 +195,25 @@ class _Utility {
   /// Return formatted type based on [displayFormat]
   static String getFormattedAmount(
       MoneyDisplayFormat displayFormat, FlutterMoneyFormatter fmf) {
+    MoneyFormatterOutput _fo = fmf.output;
     switch (displayFormat) {
       case MoneyDisplayFormat.compactLeftSymbol:
-        return fmf.compactLeftSymbol;
+        return _fo.compactSymbolOnLeft;
         break;
       case MoneyDisplayFormat.compactRightSymbol:
-        return fmf.compactRightSymbol;
+        return _fo.compactSymbolOnRight;
         break;
       case MoneyDisplayFormat.compactNoSymbol:
-        return fmf.compactNonSymbol;
+        return _fo.compactNonSymbol;
         break;
       case MoneyDisplayFormat.longLeftSymbol:
-        return fmf.formattedLeftSymbol;
+        return _fo.symbolOnLeft;
         break;
       case MoneyDisplayFormat.longRightSymbol:
-        return fmf.formattedRightSymbol;
+        return _fo.symbolOnRight;
         break;
       default:
-        return fmf.formattedNonSymbol;
+        return _fo.nonSymbol;
         break;
     }
   }

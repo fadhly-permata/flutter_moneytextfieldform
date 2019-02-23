@@ -171,9 +171,13 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 
 For more complete samples, you can grab it from the [example directory](https://github.com/fadhly-permata/flutter_moneytextfieldform/tree/master/example).
 
+## Our Other Package
+
+See our [other packages here](https://pub.dartlang.org/flutter/packages?q=email%3Afadhly.permata%40gmail.com).
+
 ## Help Me
 
-If you find an issue, bug, question, or want to request a new feature you can [do it here](https://github.com/fadhly-permata/flutter_moneytextfieldform/issues). You can also help me to improve features or fix some issues by [forking this project via Github](https://github.com/fadhly-permata/flutter_moneytextfieldform)
+If you find any issues, bugs, have questions, or want to request a new features you can [do it here](https://github.com/fadhly-permata/flutter_moneytextfieldform/issues). You can also help me to improve features or fix some issues by [forking this project via Github](https://github.com/fadhly-permata/flutter_moneytextfieldform)
 
 ## Change Log
 
