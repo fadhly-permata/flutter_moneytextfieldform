@@ -43,7 +43,7 @@ class MoneyFormatSettings {
       this.thousandSeparator = ',',
       this.decimalSeparator = '.',
       this.symbolAndNumberSeparator = ' ',
-      this.displayFormat = MoneyDisplayFormat.longLeftSymbol});
+      this.displayFormat = MoneyDisplayFormat.symbolOnLeft});
 
   double amount;
   int fractionDigits;

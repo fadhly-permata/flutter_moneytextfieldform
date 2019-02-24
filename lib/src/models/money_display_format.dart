@@ -35,9 +35,9 @@
 
 enum MoneyDisplayFormat {
   longNoSymbol,
-  longLeftSymbol,
-  longRightSymbol,
-  compactNoSymbol,
-  compactLeftSymbol,
-  compactRightSymbol
+  symbolOnLeft,
+  symbolOnRight,
+  compactNonSymbol,
+  compactSymbolOnLeft,
+  compactSymbolOnRight
 }

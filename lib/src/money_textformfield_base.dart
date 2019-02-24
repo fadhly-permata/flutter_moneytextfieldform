@@ -117,8 +117,9 @@ class _MoneyTextFormFieldState extends State<MoneyTextFormField> {
   _onChanged() {
     MoneyTextFormFieldSettings ws = widget.settings;
 
-    _fmf.amount = _Utility.stringToDouble(ws.controller.text,
-        fractionDigits: ws.moneyFormatSettings.fractionDigits);
+    _fmf = _fmf.copyWith(
+        amount: _Utility.stringToDouble(ws.controller.text,
+            fractionDigits: ws.moneyFormatSettings.fractionDigits));
 
     _formattedAmount =
         _Utility.getFormattedAmount(ws.moneyFormatSettings.displayFormat, _fmf);
@@ -197,19 +198,19 @@ class _Utility {
       MoneyDisplayFormat displayFormat, FlutterMoneyFormatter fmf) {
     MoneyFormatterOutput _fo = fmf.output;
     switch (displayFormat) {
-      case MoneyDisplayFormat.compactLeftSymbol:
+      case MoneyDisplayFormat.compactSymbolOnLeft:
         return _fo.compactSymbolOnLeft;
         break;
-      case MoneyDisplayFormat.compactRightSymbol:
+      case MoneyDisplayFormat.compactSymbolOnRight:
         return _fo.compactSymbolOnRight;
         break;
-      case MoneyDisplayFormat.compactNoSymbol:
+      case MoneyDisplayFormat.compactNonSymbol:
         return _fo.compactNonSymbol;
         break;
-      case MoneyDisplayFormat.longLeftSymbol:
+      case MoneyDisplayFormat.symbolOnLeft:
         return _fo.symbolOnLeft;
         break;
-      case MoneyDisplayFormat.longRightSymbol:
+      case MoneyDisplayFormat.symbolOnRight:
         return _fo.symbolOnRight;
         break;
       default:

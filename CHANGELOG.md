@@ -2,9 +2,9 @@
 
 - ## 0.3.1
     **UPDATE:**
-    - Update `FlutterMoneyFormatter` dependecies
+    - Update `FlutterMoneyFormatter` dependecy.
     - Update license on each files.
-    
+    - Update source code to match new dependecy changes.
 
     **FIX:**
     - Formatting source code as suggested on https://pub.dartlang.org

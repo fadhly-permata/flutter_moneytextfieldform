@@ -24,6 +24,14 @@
 /// The views and conclusions contained in the software and documentation are those
 /// of the authors and should not be interpreted as representing official policies,
 /// either expressed or implied, of the MoneyTextFormField project.
+///
+///
+/// =================================================================================
+/// author  : Fadhly Permata
+/// email   : fadhly.permata@gmail.com
+/// github  : https://github.com/fadhly-permata/flutter_moneytextfieldform
+/// pub     : https://pub.dartlang.org/packages/moneytextformfield
+/// =================================================================================
 
 import 'package:flutter/material.dart';
 import 'package:moneytextformfield/moneytextformfield.dart';
@@ -70,8 +78,7 @@ class _MyAppState extends State<MyApp> {
                           controller: longCtrl,
                           moneyFormatSettings: MoneyFormatSettings(
                               currencySymbol: 'IDR',
-                              displayFormat:
-                                  MoneyDisplayFormat.longRightSymbol),
+                              displayFormat: MoneyDisplayFormat.symbolOnRight),
                           appearanceSettings: AppearanceSettings(
                               padding: EdgeInsets.all(15.0),
                               labelText: 'Long Format Demo',
@@ -86,7 +93,7 @@ class _MyAppState extends State<MyApp> {
                           controller: compactCtrl,
                           moneyFormatSettings: MoneyFormatSettings(
                               displayFormat:
-                                  MoneyDisplayFormat.compactLeftSymbol),
+                                  MoneyDisplayFormat.compactSymbolOnLeft),
                           appearanceSettings: AppearanceSettings(
                               padding: EdgeInsets.all(15.0),
                               labelText: 'Short Format Demo',
