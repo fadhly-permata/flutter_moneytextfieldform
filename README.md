@@ -156,14 +156,14 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 ### MoneyDisplayFormat
 `MoneyDisplayFormat` is an enum object with values such as the following:
 
-| Name                | Description |
-| ------------------  | ----------- |
-| longNoSymbol        | Used to display currency values in full format and without a currency symbol. |
-| longLeftSymbol      | Used to display currency values in full format with currency symbols on the left. |
-| longRightSymbol     | Used to display currency values in full format with currency symbols on the right. |
-| compactNoSymbol     | Used to display currency values in a short format and without a currency symbol. |
-| compactLeftSymbol   | Used to display currency values in a short format with a currency symbol on the left. |
-| compactRightSymbol  | Used to display currency values in a short format with a currency symbol on the right. |
+| Name                  | Description |
+| ------------------ -- | ----------- |
+| nonSymbol             | Used to display currency values in full format and without a currency symbol. |
+| symbolOnLeft          | Used to display currency values in full format with currency symbols on the left. |
+| symbolOnRight         | Used to display currency values in full format with currency symbols on the right. |
+| compactNonSymbol      | Used to display currency values in a short format and without a currency symbol. |
+| compactSymbolOnLeft   | Used to display currency values in a short format with a currency symbol on the left. |
+| compactSymbolOnRight  | Used to display currency values in a short format with a currency symbol on the right. |
 
 ---
 

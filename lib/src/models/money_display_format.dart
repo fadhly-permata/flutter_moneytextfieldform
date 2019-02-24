@@ -34,7 +34,7 @@
 /// =================================================================================
 
 enum MoneyDisplayFormat {
-  longNoSymbol,
+  nonSymbol,
   symbolOnLeft,
   symbolOnRight,
   compactNonSymbol,

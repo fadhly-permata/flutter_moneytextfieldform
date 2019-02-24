@@ -1,5 +1,10 @@
 # 0.3.*
 
+- ## 0.3.2
+    **FIX:**
+    - Update `MoneyDisplayFormat` enum values.
+    - Documentation update.
+
 - ## 0.3.1
     **UPDATE:**
     - Update `FlutterMoneyFormatter` dependecy.
