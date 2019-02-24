@@ -1,12 +1,20 @@
 # 0.3.*
 
+- ## 0.3.3
+    **CHANGES:**
+    - Update `FlutterMoneyFormatter` version 0.6.3
+
+    **FIX:**
+    - Fix header license to support https://pub.dartlang.org/documentation.
+    - Fix invalid table on documentation
+
 - ## 0.3.2
     **FIX:**
     - Update `MoneyDisplayFormat` enum values.
     - Documentation update.
 
 - ## 0.3.1
-    **UPDATE:**
+    **CHANGES:**
     - Update `FlutterMoneyFormatter` dependecy.
     - Update license on each files.
     - Update source code to match new dependecy changes.

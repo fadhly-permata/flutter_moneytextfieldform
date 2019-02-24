@@ -1,4 +1,4 @@
-/// Copyright (c) 2019, Fadhly Permata <fadhly.permata@gmail.com>
+/// Copyright (c) 2019, Fadhly Permata (<fadhly.permata@gmail.com>)
 /// All rights reserved.
 ///
 /// Redistribution and use in source and binary forms, with or without
@@ -23,15 +23,18 @@
 ///
 /// The views and conclusions contained in the software and documentation are those
 /// of the authors and should not be interpreted as representing official policies,
-/// either expressed or implied, of the MoneyTextFormField project.
+/// either expressed or implied, of the MoneyTextFieldForm project.
 ///
 ///
-/// =================================================================================
-/// author  : Fadhly Permata
-/// email   : fadhly.permata@gmail.com
-/// github  : https://github.com/fadhly-permata/flutter_moneytextfieldform
-/// pub     : https://pub.dartlang.org/packages/moneytextformfield
-/// =================================================================================
+/// ---
+///
+/// | Author  | Fadhly Permata |
+/// | ------- | -------------- |
+/// | Email   | fadhly.permata@gmail.com |
+/// | GitHub  | https://github.com/fadhly-permata/flutter_moneytextfieldform |
+/// | Pub     | https://pub.dartlang.org/packages/moneytextformfield |
+///
+/// ---
 
 import 'package:moneytextformfield/src/models/money_display_format.dart';
 
