@@ -2,7 +2,7 @@
 
 > `MoneyTextFormField` is one of the flutter widget packages that can be used to input values in the form of currencies, by displaying the output format in realtime.
 >
-> This widget is based on the `FlutterMoneyFormatter` package which has a very powerful ability to do currency formatting.
+> This widget uses the `FlutterMoneyFormatter` package as a basic engine that has a very powerful ability to format currencies.
 >
 > [![latest version](https://img.shields.io/pub/v/moneytextformfield.svg?style=plastic&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAQAAAC1QeVaAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfjAg8HMDMbfsHaAAABSUlEQVQY0y2LsUvUYRyHn+/7fe2uVMIz4hcnin+BFCrdZq1BQ1MN4VJxY7MoRLg7OGQ0NPkfiIOYBbYpiUO0VSQ15UFxHHf8fu/7cTif9XkeEz/54TO5qX4xtmJP8mZ8vR+vpt/q4gU3QitP3Iwr9fdhyerhPjZ7cBZH9Rf75ldSp11tXKsnZYHlEDvrt9dO4/dkjwjF6tde43M5GjGBlGoxrNtainGOsef9RqsMIyfUEZg8V1pVslf+crL3dup6EW6ZOMMRGEbmnmqh07bpkLEB89xhgMFQo8dRy4AZMGAe+EINkAEp2B6QhvHw7nOJ+9Fuq2guNsvKDaNiBvGLkUTQuf8Pd3e6U+MLKnGAkmkyf8xN/+zAeuFBKt+FZ6qGmux+tP3xw0TFGz7ZoffRlqQkSSolvRCK8Skmz9lpE3lIl0CiUfUix34BalOOAMgIffsAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTktMDItMTVUMDc6NDg6NTEtMDU6MDCMNC56AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE5LTAyLTE1VDA3OjQ4OjUxLTA1OjAw/WmWxgAAAABJRU5ErkJggg==)](https://pub.dartlang.org/packages/moneytextformfield)
 > [![last commit](https://img.shields.io/github/last-commit/fadhly-permata/flutter_moneytextfieldform.svg?style=plastic&logo=github)](https://github.com/fadhly-permata/flutter_moneytextfieldform)
@@ -15,12 +15,12 @@
 
 ---
 
-## Install
+# Install
 
 For complete steps in installing `MoneyTextFormField` you can see in the [**Installation Guide**](https://pub.dartlang.org/packages/moneytextformfield#-installing-tab-).
 
 
-## Usage
+# Usage
 
 The following is the simplest example of using `MoneyTextFormField`:
 
@@ -34,7 +34,7 @@ import 'package:moneytextformfield/moneytextformfield.dart';
   /// ... some lines of code ...
 ```
 
-For those who do not understand in implementing the code above, you can see the code below to create an application that can be directly used.
+For those of you who have not yet understood how to implement the widget package, you can use the following code in the `main.dart` file on your Flutter project:
 
 
 ```dart
@@ -100,11 +100,11 @@ Referring to the example code above, to retrieve the value inputted by the user,
 
 ---
 
-## Configurations
+# Configurations
 For now, `MoneyTextFormField` only uses one property to configure the display of that object, the `settings` property that has a data type is an instance of `MoneyTextFormFieldSettings`. 
 
 
-### MoneyTextFormFieldSettings
+## MoneyTextFormFieldSettings
 
 | Name                          | Data Type     | Description |
 | ----------------------------- | ------------- | ----------- |
@@ -127,7 +127,7 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 >>> [See detailed information about `FlutterMoneyFormatter`.](https://pub.dartlang.org/packages/flutter_money_formatter)
 
 
-### AppearanceSettings
+## AppearanceSettings
 
 | Name                          | Data Type           | Description |
 | ----------------------------- | ------------------- | ----------- |
@@ -141,7 +141,7 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 | `padding`                     | `EdgeInsetGeometry` | The amount of space by which to inset the widget |
 
 
-### MoneyFormatSettings
+## MoneyFormatSettings
 | Name                          | Data Type             | Description |
 | ----------------------------- | --------------------- | ----------- |
 | `amount`                      | `double`              | Decimal value that will be used when initializing the widget. Default value is `0.00`. |
@@ -153,7 +153,7 @@ For now, `MoneyTextFormField` only uses one property to configure the display of
 | `displayFormat`               | `MoneyDisplayFormat`  | [See here](#MoneyDisplayFormat) |
 
 
-### MoneyDisplayFormat
+## MoneyDisplayFormat
 `MoneyDisplayFormat` is an enum object with values such as the following:
 
 | Name                  | Description |
@@ -182,3 +182,36 @@ If you find any issues, bugs, have questions, or want to request a new features 
 ## Change Log
 
 Are you curious about the changes that occur in each version? [See here for detailed informations](https://pub.dartlang.org/packages/moneytextformfield#-changelog-tab-).
+
+---
+
+# License
+
+```none
+Copyright (c) 2019, Fadhly Permata <fadhly.permata@gmail.com>
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The views and conclusions contained in the software and documentation are those
+of the authors and should not be interpreted as representing official policies,
+either expressed or implied, of the MoneyTextFormField project.
+```
