@@ -1,5 +1,9 @@
 # 0.3.*
 
+- ## 0.3.5
+    **CHANGES:**
+    - Update `FlutterMoneyFormatter` version 0.7.3
+
 - ## 0.3.4
     **CHANGES:**
     - Update `FlutterMoneyFormatter` version 0.7.1
