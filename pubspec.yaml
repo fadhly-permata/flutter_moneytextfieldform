@@ -1,6 +1,6 @@
 name: moneytextformfield
 description: MoneyTextFormField is one of the flutter widget packages that can be used to input values in the form of currencies, by displaying the output format in realtime.
-version: 0.3.5
+version: 0.3.5+1
 author: Fadhly Permata <fadhly.permata@gmail.com>
 homepage: https://github.com/fadhly-permata/flutter_moneytextfieldform
 
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_money_formatter: ^0.7.3
+  flutter_money_formatter: ^0.8.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec

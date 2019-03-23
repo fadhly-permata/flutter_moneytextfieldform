@@ -187,7 +187,7 @@ Are you curious about the changes that occur in each version? [See here for deta
 
 # License
 
-```none
+```text
 Copyright (c) 2019, Fadhly Permata <fadhly.permata@gmail.com>
 All rights reserved.
 
